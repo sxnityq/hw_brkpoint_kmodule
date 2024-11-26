@@ -20,7 +20,7 @@ static struct perf_event_attr   event_attr;
  */
 static void triggered(struct perf_event *event, struct perf_sample_data *data, struct pt_regs *regs)
 {
-    pr_info("[%s]: triggered at address %llX\tHOT PORN!\n", module_name(THIS_MODULE), addr);
+    pr_info("[%s]: triggered at address %llX\tHOT!!!\n", module_name(THIS_MODULE), addr);
     return;
 }
 
