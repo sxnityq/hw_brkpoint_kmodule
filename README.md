@@ -10,7 +10,7 @@ This is simple hardware breakpoint kernel module for kernel 6.6.58-gentoo-dist t
 
 ### HOW TO USE
 
-I set hardcoded address. That worst decision, but it will be fixed later.
+I set hardcoded address. That was the worst decision, but it will be fixed later.
 So in order to test sysfs modification and module work in general lets begin with answering which address to pick and from where
 
 /proc/kallsyms - this file contains all information about different variables, dwelled in kernel space. lets get address that is related to /dev/random.
@@ -19,7 +19,7 @@ UNDER THE ROOT!
 ```cat /proc/kallsyms | grep " D " | grep random_fops```
 remember this addr
 
-now lets load our module
+Load the module
 ```
 make
 insmod mmodule.ko
@@ -32,9 +32,12 @@ echo <addr from /proc/kallsyms> > /sys/kernel/mmodule/addr
 ```
 
 in new window 
-```dmesg -w```
+```
+dmesg -w
+```
 in another window 
-```cat /dev/random
+```
+cat /dev/random
 and CTRL^C
 ```
 
